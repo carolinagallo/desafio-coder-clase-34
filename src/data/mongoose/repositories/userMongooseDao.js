@@ -87,9 +87,8 @@ class UserMongooseRepository {
   }
 
   async getOneByEmail(email) {
-    console.log("no paso");
     const userDocument = await userModel.findOne({ email });
-    console.log("paso");
+
     if (!userDocument) throw new Error("usuario no existe");
 
     return new User({

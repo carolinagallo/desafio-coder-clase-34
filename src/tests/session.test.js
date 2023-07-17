@@ -23,6 +23,7 @@ describe("Testing Auth Endpoints Success", () => {
     });
   });
   beforeEach(async function () {
+    console.log(db);
     this.timeout(10000);
     await new Promise((resolve) => setTimeout(resolve, 500));
   });

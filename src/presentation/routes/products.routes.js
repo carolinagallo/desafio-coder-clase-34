@@ -19,10 +19,10 @@ router.post(
   "/add",
   uploader.single("thumbnail"),
   auth,
-  authorization,
+  authorization(),
   uploaderProduct
 );
-router.put("/update/:pid", auth, authorization, updateOneProduct);
-router.delete("/delete/:pid", auth, authorization, deleteById);
+router.put("/update/:pid", auth, authorization(), updateOneProduct);
+router.delete("/delete/:pid", auth, authorization(), deleteById);
 
 export default router;

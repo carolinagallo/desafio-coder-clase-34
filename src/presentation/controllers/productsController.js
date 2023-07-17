@@ -42,7 +42,7 @@ export const uploaderProduct =
   ("/add",
   async (req, res) => {
     //Los datos del producto fueron pasados por form-data.
-    console.log(req.body);
+
     const productManager = new ProductManager();
     try {
       if (!req.file) {
@@ -87,5 +87,5 @@ export const deleteById =
 
     const deleteElement = await productManager.deleteProduct(id);
     if (!deleteElement) return res.status(404).send("Product no exist");
-    res.send("Delete product");
+    res.send({ status: "success", massage: "product deleted" });
   });
